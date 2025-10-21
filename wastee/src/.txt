@@ -1,0 +1,124 @@
+the main dashboard 
+
+import { Home, MapPin, Recycle, Gift, Trophy, Settings, LogIn } from "lucide-react";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+
+export default function LandingPage() {
+  return (
+    <div className="flex min-h-screen bg-gray-50">
+      {/* Sidebar */}
+      <aside className="w-64 bg-white shadow-md flex flex-col">
+        <div className="p-6 font-bold text-green-600 text-xl">
+          WasteWise Nigeria
+        </div>
+        <nav className="flex-1 px-4 space-y-2">
+          <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-green-100 rounded-lg">
+            <Home className="w-5 h-5 mr-2" /> Home
+          </a>
+          <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-green-100 rounded-lg">
+            <MapPin className="w-5 h-5 mr-2" /> Report Illegal Dumping
+          </a>
+          <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-green-100 rounded-lg">
+            <Recycle className="w-5 h-5 mr-2" /> Request Waste Collection
+          </a>
+          <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-green-100 rounded-lg">
+            <Gift className="w-5 h-5 mr-2" /> Rewards
+          </a>
+          <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-green-100 rounded-lg">
+            <Trophy className="w-5 h-5 mr-2" /> Leaderboard
+          </a>
+        </nav>
+        <div className="p-4">
+          <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-green-100 rounded-lg">
+            <Settings className="w-5 h-5 mr-2" /> Settings
+          </a>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col">
+        {/* Header */}
+        <header className="flex items-center justify-between px-6 py-4 bg-white shadow">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="px-4 py-2 border rounded-lg w-1/3 focus:outline-none"
+          />
+          <div className="flex items-center space-x-4">
+            <span className="text-gray-600 font-medium">₦0.00</span>
+            <button className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+              <LogIn className="w-5 h-5 mr-2" /> Login
+            </button>
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="flex-1 flex flex-col items-center justify-center text-center px-6">
+          <div className="w-20 h-20 flex items-center justify-center rounded-full bg-green-100 mb-6">
+            <Recycle className="w-10 h-10 text-green-600" />
+          </div>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            WasteWise Nigeria: Smarter Waste Management
+          </h1>
+          <p className="text-gray-600 mb-6 max-w-2xl">
+            Join our community in making waste management more efficient, sustainable, 
+            and rewarding. Request collections, find recycling centers, and help keep Nigeria clean.
+          </p>
+          <button className="px-6 py-3 bg-green-500 text-white rounded-lg text-lg font-semibold hover:bg-green-600">
+            Get Started
+          </button>
+        </section>
+
+        {/* Our Partners */}
+        <section className="bg-gray-100 py-12 text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Partners</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {["Lagos LGA", "RecycleNG", "GreenEarth", "UN SDG Hub"].map((partner) => (
+              <div
+                key={partner}
+                className="bg-white shadow rounded-lg px-6 py-3 font-medium text-gray-700 hover:bg-green-50"
+              >
+                {partner}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Stay Updated */}
+        <section className="bg-white py-12 text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Stay Updated</h2>
+          <p className="text-gray-600 mb-6">
+            Get the latest recycling tips, community events, and new features.
+          </p>
+          <form className="flex justify-center space-x-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-4 py-2 border rounded-lg w-80 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+            >
+              Subscribe
+            </button>
+          </form>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-green-600 text-white py-6 text-center">
+          <div className="mb-4">
+            <p className="font-semibold">Follow Us</p>
+            <div className="flex justify-center space-x-4 mt-2">
+              <a href="#"><FaFacebook className="w-6 h-6" /></a>
+              <a href="#"><FaTwitter className="w-6 h-6" /></a>
+              <a href="#"><FaInstagram className="w-6 h-6" /></a>
+              <a href="#"><FaLinkedin className="w-6 h-6" /></a>
+            </div>
+          </div>
+          <p className="text-sm">© {new Date().getFullYear()} WasteWise Nigeria. All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
+  );
+}
